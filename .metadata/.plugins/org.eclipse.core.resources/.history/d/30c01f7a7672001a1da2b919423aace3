@@ -1,0 +1,24 @@
+package study;
+
+public class test04 {
+
+	public static void main(String[] args) {
+		String C="example";
+		String S="John Doe";
+		
+		System.out.println(solution(S,C));
+	}
+
+	public static String solution(String S,String C) {
+		String[] a=C.split(" ");
+		for(int i=0;i<a.length;i++) {
+			System.out.println(a[i]);
+		}
+		/*System.out.println(a[0]+" "+a[1]+" "+"<"+a[1]+"_"+a[0]+"@"+C+".com>");*/
+		if(a.length==2) {
+			System.out.println(a[0]+" "+a[1]+" "+"<"+a[1]+"_"+a[0]+"@"+C+".com>");
+			return a[0]+" "+a[1]+" "+"<"+a[1]+"_"+a[0]+"@"+C+".com>";
+		}
+		return "";
+	}
+}

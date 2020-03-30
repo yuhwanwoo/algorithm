@@ -1,0 +1,22 @@
+package study;
+
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class test01 {
+
+	public static void main(String[] args) {
+		int[] s= {3,8,2,3,3,2};
+		solution(s);
+	}
+	public static int solution(int[] s) {
+		HashMap<Integer, Integer> ha=new HashMap<>();
+		
+		for(int i=0;i<s.length;i++) {
+			ha.put(s[i], +1);
+		}
+		System.out.println(ha.get(3));
+		
+		return 0;
+	}
+}

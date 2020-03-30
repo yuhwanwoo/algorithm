@@ -1,0 +1,18 @@
+package study;
+
+public class test02 {
+
+	public static void main(String[] args) {
+		int[] s= {51,71,17,42};
+	}
+
+	public static int solution(int[] s) {
+
+		int[] an=null;
+		for(int i=0;i<s.length;i++) {
+			an[i]=s[i]/10+s[i]%10;
+		}
+		
+		return 0;
+	}
+}

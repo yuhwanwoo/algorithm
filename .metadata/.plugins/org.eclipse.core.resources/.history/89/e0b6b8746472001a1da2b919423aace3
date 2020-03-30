@@ -1,0 +1,31 @@
+package study;
+
+import java.util.Arrays;
+
+public class test01 {
+
+	public static void main(String[] args) {
+		int[] s= {3,8,2,3,3,2};
+		solution(s);
+	}
+	public static int solution(int[] s) {
+		
+        int mode = 0;
+        int[] index = new int[6]; 
+        int max = Integer.MIN_VALUE; 
+       
+     
+        for (int i = 0; i < s.length; i++) {
+            index[s[i]]++;           
+        }
+        for (int i=0; i< index.length; i++){
+            if(max<index[i]){
+                max = index[i]; 
+                mode = i;
+            }          
+        }      
+   
+        System.out.println("ÃÖºó°ª : "+ mode +" , "+max+"¹ø"); 
+        return mode;
+	}
+}
