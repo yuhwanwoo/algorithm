@@ -1,8 +1,8 @@
 package study;
 
 import java.util.Stack;
-//https://programmers.co.kr/learn/courses/30/lessons/12973
-//프로그래머스 12973 짝지어 제거하기
+
+//프로그래머스 12973
 
 public class pair_remove {
 	public static void main(String[] args) {
@@ -16,11 +16,12 @@ public class pair_remove {
 		
 		Stack<String> st=new Stack<>();
 		an=s.split("");
-		for(int i=0;i<an.length;i++) {
-			
-			if(st.empty()) {
-				st.add(an[i]);
-			}else if(st.peek().equals(an[i])) {
+		st.add(an[0]);
+		for(int i=1;i<an.length;i++) {
+			st.add(an[i]);
+			if(st.get(i).equals(st.get(i-1))) {
+				System.out.println("i:"+i+"  st.get(i) :"+st.get(i));
+				System.out.println("i:"+i+"  st.get(i-1) :"+st.get(i-1));
 				st.pop();
 				
 			}

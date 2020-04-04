@@ -1,8 +1,8 @@
 package study;
 
 import java.util.Stack;
-//https://programmers.co.kr/learn/courses/30/lessons/12973
-//프로그래머스 12973 짝지어 제거하기
+
+//프로그래머스 12973
 
 public class pair_remove {
 	public static void main(String[] args) {

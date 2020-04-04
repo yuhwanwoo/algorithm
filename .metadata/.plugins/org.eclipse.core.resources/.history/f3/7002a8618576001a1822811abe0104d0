@@ -1,0 +1,25 @@
+package study;
+
+public class Tournament {
+
+	public static void main(String[] args) {
+		
+		System.out.println(solution(8, 3, 7));
+		solution(8, 3, 7);
+	}
+	
+	public static int solution(int n, int a, int b) {
+		
+		int answer=0;
+		if(a==b) {
+			return answer;
+		}else {
+			answer++;
+			solution(n,(a+1)/2,(b+1)/2);
+		}
+		return answer;
+		
+		
+		
+	}
+}
