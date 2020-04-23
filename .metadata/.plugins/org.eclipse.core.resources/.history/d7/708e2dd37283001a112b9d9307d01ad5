@@ -1,0 +1,19 @@
+package concept;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//https://coding-factory.tistory.com/251
+//
+
+public class BufferdReader_BufferedWriter {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in)); //¼±¾ð
+		String s = bf.readLine(); //String
+		int i = Integer.parseInt(bf.readLine());
+		System.out.println(i);
+	}
+
+}

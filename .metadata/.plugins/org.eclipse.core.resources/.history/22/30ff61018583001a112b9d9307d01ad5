@@ -1,0 +1,17 @@
+package concept;
+
+import java.util.StringTokenizer;
+
+public class StringTokenizer_test {
+
+	public static void main(String[] args) {
+		String aaa="안녕.나는.이이.라고해.";
+		StringTokenizer str=new StringTokenizer(aaa,".");
+		for (int i = 0; i < str.countTokens(); i++) {
+			System.out.println(str.nextToken());
+		}
+		System.out.println(str.countTokens());
+		
+	}
+
+}

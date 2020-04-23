@@ -1,0 +1,15 @@
+package study;
+
+public class incomplete_player {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static String solution() {
+		
+		return "";
+	}
+
+}

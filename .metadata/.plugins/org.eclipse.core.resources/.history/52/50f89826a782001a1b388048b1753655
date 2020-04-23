@@ -1,0 +1,18 @@
+package study;
+
+import java.util.List;
+
+public class incomplete_player {
+
+	public static void main(String[] args) {
+		String[] participant= {"leo","kiki","eden"};
+		String[] completion= {"eden","kiki"};
+
+	}
+	
+	public static String solution(String[] participant, String[] completion) {
+		List<String> par=new ArrayList<String>();
+		return "";
+	}
+
+}

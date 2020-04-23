@@ -1,0 +1,30 @@
+package concept;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+//https://coding-factory.tistory.com/251
+//Scanner은 space랑 enter모두 경계로 인식하지만
+//BufferedReader는 Enter만 경계로 인식하고 받은데이터가 String으로 고정 but 많은 데이터 받을때는 훨씬 효율적
+
+public class BufferdReader_BufferedWriter {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in)); //선언
+		String s = bf.readLine(); //String
+		System.out.println(s);
+		int i = Integer.parseInt(bf.readLine());
+		System.out.println(i);
+		
+		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
+		bw.write(s);
+		bw.flush();
+		bw.close();
+		
+		
+	}
+
+}
