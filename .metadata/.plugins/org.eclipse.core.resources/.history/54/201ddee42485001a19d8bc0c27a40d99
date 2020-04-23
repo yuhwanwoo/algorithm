@@ -1,0 +1,37 @@
+package programmers_lev02;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class tower {
+
+	public static void main(String[] args) {
+		int[] height= {6,9,5,7,4};
+		
+		solution(height);
+	}
+	
+	public static int[] solution(int[] heights) {
+        int[] answer = {};
+        Stack<Integer> st=new Stack<>();
+        Stack<Integer> st1=new Stack<>();
+        
+        for(int i=0;i<heights.length;i++) {
+        	st.push(heights[i]);
+        }
+        while(st.size()>0) {
+        	for(int i=st.size()-2;i>0;i--) {
+        		if(st.get(st.size()-1)<st.get(i)){
+        			st1.push(i+1);
+        		}
+        	}
+        	st.pop();
+        }
+        for(int i=0;i<st1.size();i++) {
+        	System.out.println(st1.get(i));
+        }
+        return answer;
+    }
+
+}

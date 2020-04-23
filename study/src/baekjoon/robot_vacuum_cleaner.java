@@ -28,8 +28,16 @@ public class robot_vacuum_cleaner {
 				arr[i][j]=Integer.parseInt(st.nextToken());
 			}
 		}
+		clean();
+		
 	}
 	
+	public static int clean() {
+		int answer;
+		
+		
+		return 0;
+	}
 	
 
 }
