@@ -1,0 +1,49 @@
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+// https://www.acmicpc.net/problem/14501
+// น้มุ 14501 ล๐ป็
+public class Resignation {
+
+	static int yn;
+	static int cnt=0;
+
+	public static void main(String[] args) throws IOException {
+		int n;
+		int[][] arr;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		yn = Integer.parseInt(st.nextToken());
+		arr = new int[yn][2];
+		for (int i = 0; i < yn; i++) {
+			st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < 2; j++) {
+				arr[i][j] = Integer.parseInt(st.nextToken());
+			}
+		}
+		int answer=0;
+		
+		answer=solution(arr, yn);
+		System.out.println(answer);
+
+	}
+
+	public static int solution(int[][] arr, int yn) {
+		int cnt=0;
+		int pan=0;
+		for(int i=0;i<arr.length;i+=cnt) {
+			if(cnt>yn) {
+				break;
+			}else {
+				cnt=pan+arr[i][0];
+			}
+		}
+		
+		return cnt;
+	}
+
+}

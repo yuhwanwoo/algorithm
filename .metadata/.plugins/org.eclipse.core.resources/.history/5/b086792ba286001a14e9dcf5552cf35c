@@ -1,0 +1,45 @@
+package hyundaicard200425;
+
+public class Test02 {
+
+	public static void main(String[] args) {
+		String[] registered_list= {"card", "ace13", "ace16", "banker", "ace17", "ace14"};
+		String new_id="ace15";
+		solution(registered_list, new_id);
+	}
+
+	public static String solution(String[] registered_list, String new_id) {
+		String answer="";
+		char[] a=new_id.toCharArray();
+		int indexpan=0;
+		for(int i=0;i<a.length;i++) {
+			
+			if((int)a[i]>=49) {
+				indexpan=i;
+			}
+		}
+		char[] S=new char[indexpan];
+		char[] N=new char[a.length-indexpan+1];
+		
+		for(int i=0;i<S.length-1;i++) {
+			S[i]=a[i];
+			System.out.println(S[i]);
+		}
+		for(int i=0;i<N.length;i++) {
+			N[i]=a[indexpan+i-1];
+			System.out.println(N[i]);
+		}
+		String s=new String(S);
+		String n=new String(N);
+		
+		for(int i=0;i<registered_list.length;i++) {
+			if(s.equals(registered_list[i])) {
+				
+			}
+		}
+		
+		
+		
+		return answer;
+	}
+}
