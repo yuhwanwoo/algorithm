@@ -30,10 +30,11 @@ public class Resignation {
 
 	}
 
-	public static int solution(int[][] arr, int yn, int cnt) {
-
-		if (arr.length > yn) {
-			return cnt;
+	public static int solution(int[][] arr, int today, int sum) {
+		int res1;
+		int res2;
+		if (arr.length < today) {
+			return sum;
 		} else {
 			
 		}

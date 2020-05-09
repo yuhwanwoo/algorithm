@@ -1,0 +1,51 @@
+package kakao2020intern;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class test02 {
+
+	public static void main(String[] args) {
+		
+		String expression="100-200*300-500+20";
+		
+		solution(expression);
+	}
+
+	public static long solution(String expression) {
+		ArrayList<String> arr=new ArrayList<>();
+		String[] mi=null;
+		long answer=0;
+		
+		expression=expression.replace("-","+");
+		expression=expression.replace("*","+");
+		System.out.println(expression);
+		mi=expression.split("\\+");
+		for(int i=0;i<mi.length;i++) {
+			System.out.println(mi[i]);
+		}
+		
+		Queue<Integer> num=new LinkedList<Integer>();
+		for(int i=0;i<mi.length;i++) {
+			num.add((Integer.parseInt(mi[i])));
+		}
+		cir(num,0,0,0);
+		
+		return answer;
+	}
+	
+	public static int cir(Queue<Integer> num,int a,int b,int c){
+		int cnt=num.size();
+		int hap;
+		if(num.size()==0) {
+			return 0;
+		}else {
+			
+		}
+		
+		
+		
+		return 0;
+	}
+}

@@ -1,0 +1,43 @@
+package kakao2020intern;
+
+public class test04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static int solution(int[][] board) {
+		int answer=0;
+		
+		Car car=new Car(0, 0,1);
+		Car car2=new Car(0, 0,2);
+		soon(car,board,0);
+
+		
+        return answer;
+	}
+	
+	public static int soon(Car car,int[][] board,int hap) {
+		int price=hap;
+		if((car.x==board.length-1)&&car.y==board[board.length-1][board.length-1]) {
+			return price; 
+		}
+		return 0;
+	}
+}
+
+class Car{
+	int x;
+	int y;
+	int r;
+	
+	public Car(int x, int y,int r) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.r= r;
+		
+	}
+	
+}

@@ -1,0 +1,14 @@
+package kakao2020intern;
+
+public class test01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static String solution(int[] numbers,String hand) {
+		
+		return null;
+	}
+}

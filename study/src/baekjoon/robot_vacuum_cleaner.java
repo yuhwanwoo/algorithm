@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
+// https://buddev.tistory.com/37
+// 
+
 public class robot_vacuum_cleaner {
 	static int[][] arr;
 	static int n,m,r,c,d;
@@ -37,6 +40,4 @@ public class robot_vacuum_cleaner {
 		
 		return 0;
 	}
-	
-
 }
