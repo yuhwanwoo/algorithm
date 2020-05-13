@@ -30,27 +30,14 @@ public class robot_vacuum_cleaner {
 				arr[i][j]=Integer.parseInt(st.nextToken());
 			}
 		}
-		clean(arr,r,c,d);
+		clean();
 		
 	}
 	
-	public static int clean(int[][] arr,int r,int c, int d) {
+	public static int clean() {
 		int answer;
 		
-		Cleaner cleaner=new Cleaner(r,c,d);
+		
 		return 0;
 	}
-}
-
-class Cleaner{
-	int r;
-	int c;
-	int d;
-	public Cleaner(int r, int c, int d) {
-		super();
-		this.r = r;
-		this.c = c;
-		this.d = d;
-	}
-	
 }

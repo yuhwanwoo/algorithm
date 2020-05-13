@@ -46,7 +46,7 @@ class Cleaner{
 	int r;
 	int c;
 	int d;
-	public Cleaner(int r, int c, int d) {
+	public cleaner(int r, int c, int d) {
 		super();
 		this.r = r;
 		this.c = c;

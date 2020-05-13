@@ -37,7 +37,7 @@ public class robot_vacuum_cleaner {
 	public static int clean(int[][] arr,int r,int c, int d) {
 		int answer;
 		
-		Cleaner cleaner=new Cleaner(r,c,d);
+		Cleaner cleaner=new Cleaner();
 		return 0;
 	}
 }
@@ -46,7 +46,7 @@ class Cleaner{
 	int r;
 	int c;
 	int d;
-	public Cleaner(int r, int c, int d) {
+	public cleaner(int r, int c, int d) {
 		super();
 		this.r = r;
 		this.c = c;
