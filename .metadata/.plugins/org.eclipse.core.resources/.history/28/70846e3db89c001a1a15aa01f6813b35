@@ -1,0 +1,64 @@
+package midas_codingTest;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Exam01 {
+
+	public static void main(String[] args) {
+		String[] strs= {"abcaefg","abcdefg","abcdhfg"};
+		
+		solution(strs);
+	}
+	
+	public static String solution(String[] strs) {
+		String answer = "";
+		HashMap<String, Integer> hash=new HashMap<>();
+		ArrayList<String> arr=new ArrayList<>();
+		
+		for(int i=0;i<strs.length;i++) {
+			String[] pro;
+			pro=strs[i].split("");
+			for(String data:pro) {
+				if(!arr.contains(data))
+					arr.add(data);
+			}
+			for(int j=0;j<arr.size();j++) {
+				hash.put(arr.get(j), hash.getOrDefault(arr.get(j), 0)+1);
+			}
+		}
+		
+		/*for(String key:hash.keySet()) {
+			System.out.println("key:"+key+":::value:"+hash.get(key));
+			
+			if(hash.get(key)==hash.get(key)) {
+				answer=answer+key;
+			}else {
+				break;
+			}
+		}*/
+		Iterator<String> keys = hash.keySet().iterator();
+		while ( keys.hasNext() ) {
+			
+		    String key = keys.next();
+		    System.out.println("¹æ¹ý3) key : " + key +" / value : " + hash.get(key));
+		    if(key.equals(keys.next())) {
+		    	answer=answer+keys.next();
+		    }else {
+		    	break;
+		    }
+		}   
+
+
+		
+		System.out.println(answer);
+		
+		
+		
+		
+		return answer;
+	}
+
+}

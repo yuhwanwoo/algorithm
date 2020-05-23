@@ -1,0 +1,19 @@
+package programmers_summercoding;
+
+public class exam02 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public static long solution(long n) {
+        long answer = 0;
+        
+        
+        
+        
+        
+        return answer;
+	}
+
+}

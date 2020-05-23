@@ -1,0 +1,17 @@
+package programmers_summercoding;
+
+public class exam02 {
+
+	public static void main(String[] args) {
+		System.out.println(solution(0));
+	}
+	
+	public static long solution(long n) {
+        long answer = 0;
+        answer=(long) Math.pow(2, 10);
+        System.out.println(answer);
+        
+        return answer;
+	}
+
+}

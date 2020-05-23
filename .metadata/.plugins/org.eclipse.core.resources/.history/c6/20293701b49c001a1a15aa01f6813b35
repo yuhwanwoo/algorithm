@@ -1,0 +1,27 @@
+package midas_codingTest;
+
+import java.util.HashMap;
+
+public class Exam01 {
+
+	public static void main(String[] args) {
+		String[] strs= {"abcaefg","abcdefg","abcdhfg"};
+		
+		solution(strs);
+	}
+	
+	public static String solution(String[] strs) {
+		String answer = "abc";
+		HashMap<String, Integer> hash=new HashMap<>();
+		for(int i=0;i<strs.length;i++) {
+			String[] pro;
+			pro=strs[i].split("");
+			for(int j=0;j<pro.length;j++) {
+				hash.put(pro[j], hash.getOrDefault("sil", 0)+1);
+			}
+		}
+		
+		return answer;
+	}
+
+}

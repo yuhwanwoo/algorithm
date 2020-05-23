@@ -1,0 +1,18 @@
+package midas_codingTest;
+
+public class Exam02 {
+
+	public static void main(String[] args) {
+		
+		int[][] target = {{0,1},{-1,1},{1,0},{-2,2}};
+
+	}
+	
+	public static int solution(int x,int y,int r, int d, int[][] target) {
+		int answer=-1;
+		double tan=Math.atan((double)y/x);
+		System.out.println(tan);
+		return answer;
+	}
+
+}

@@ -1,0 +1,59 @@
+package midas_codingTest;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Exam01 {
+
+	public static void main(String[] args) {
+		
+		
+		String[] strs= {"abcaefg","abcdefg","abcdhfg"};
+		
+		solution(strs);
+	}
+	
+	public static String solution(String[] strs) {
+		String answer = "";
+		
+		char temp;
+		HashMap<String, Integer> hash=new HashMap<>();
+		ArrayList<String> arr=new ArrayList<>();
+		
+		for(int i=0;i<strs.length;i++) {
+			String[] pro;
+			pro=strs[i].split("");
+			for(String data:pro) {
+				if(!arr.contains(data))
+					arr.add(data);
+			}
+			for(int j=0;j<arr.size();j++) {
+				hash.put(arr.get(j), hash.getOrDefault(arr.get(j), 0)+1);
+			}
+		}
+		Iterator<String> keys = hash.keySet().iterator();
+		String k=keys.next();
+		
+		for(String key:hash.keySet()) {
+			System.out.println("key:"+key+":::value:"+hash.get(key));
+			String b=keys.next();
+			System.out.println(k+":::::: k°ª");
+			if(hash.get(key)==hash.get(k)) {
+				answer=answer+key;
+			}else {
+				break;
+			}
+		}
+		
+		System.out.println(answer);
+		
+		
+		
+		
+		return answer;
+	}
+
+	
+}
