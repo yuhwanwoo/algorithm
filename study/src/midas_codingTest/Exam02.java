@@ -31,8 +31,8 @@ public class Exam02 {
 			if(Math.pow(tx, 2)+Math.pow(tx, 2)<=Math.pow(r, 2)&&
 					gak>=fir
 					&&gak<=fin) {
-				System.out.println(tx);
-				System.out.println(ty);
+//				System.out.println(tx);
+//				System.out.println(ty);
 				count++;
 			}
 			
