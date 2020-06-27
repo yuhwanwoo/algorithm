@@ -1,0 +1,67 @@
+package programmers_lev02;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
+
+// https://programmers.co.kr/learn/courses/30/lessons/42586
+// 프로그래머스 42586 기능개발
+public class Func_development {
+
+	public static void main(String[] args) {
+		/*int[] progresses = { 93, 30, 55 };
+		int[] speeds = { 1, 30, 5 };*/
+		int[] progresses= {93,30,55,20,10};
+		int[] speeds= {1,30,5,20,30};
+
+		solution(progresses, speeds);
+	}
+
+	public static int[] solution(int[] progresses, int[] speeds) {
+		int[] answer = {};
+		int[] ans = new int[progresses.length];
+		Queue<Integer> q=new LinkedList<Integer>();
+		for (int i = 0; i < progresses.length; i++) {
+			ans[i] = ((int) Math.ceil((100 - progresses[i]) / (float) speeds[i]));
+		}
+		
+		for(int i=0;i<ans.length;i++) {
+			System.out.println(ans[i]);
+		}
+		System.out.println("===========1");
+		
+		int da=ans[0];
+		for(int i=0;i<ans.length;i++) {
+			if(ans[i]>da) {
+				da=ans[i];
+				q.add(da);
+			}else if(ans[i]<=da) {
+				ans[i]=da;
+				q.add(da);
+			}
+		}
+	
+		
+		int n=q.size();
+		for(int i=0;i<n;i++) {
+			System.out.println(q.poll());
+		}
+		
+		HashMap<Integer, Integer> hash=new HashMap<>();
+		
+		for(int i=0;i<n;i++) {
+			hash.put(q.poll(),hash.getOrDefault(q.poll(), 0)+1 );
+		}
+		
+		System.out.println(hash.get(7));
+		System.out.println(hash.get(9));
+		
+		
+		
+		
+		
+		return answer;
+	}
+}

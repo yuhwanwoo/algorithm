@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
+
 // https://programmers.co.kr/learn/courses/30/lessons/42586
 // 프로그래머스 42586 기능개발
 public class Func_development {
@@ -20,28 +21,32 @@ public class Func_development {
 	public static int[] solution(int[] progresses, int[] speeds) {
 		int[] answer = {};
 		int[] ans = new int[progresses.length];
-		ArrayList<Integer> day = new ArrayList<>();
+		ArrayList<Integer> arr=new ArrayList<>();
 		for (int i = 0; i < progresses.length; i++) {
 			ans[i] = ((int) Math.ceil((100 - progresses[i]) / (float) speeds[i]));
 		}
-		day.add(ans[0]);
-		for (int i = 1; i < ans.length; i++) {
-			if (ans[0] < ans[i]) {
-				day.add(ans[i]);
+		int da=ans[0];
+		arr.add(da);
+		for(int i=0;i<ans.length;i++) {
+			if(ans[i]>da) {
+				da=ans[i];
+				arr.add(da);
+				
+			}else if(ans[i]<=da) {
+				ans[i]=da;
+		
 			}
 		}
-		HashMap<Integer, Integer> map = new HashMap<>();
-		for (int j = 0; j < day.size(); j++) {
-			for (int i = 0; i < ans.length; i++) {
-				if(ans[i]<=day.get(j)) {
-					map.put(day.get(j), map.getOrDefault(day.get(j),0)+1);
-					ans[i]=200;
-				}
-			}
+	
+		HashMap<Integer, Integer> hash=new HashMap<>();
+		
+		for(int i=0;i<ans.length;i++) {
+			hash.put(ans[i],hash.getOrDefault(ans[i], 0)+1 );
 		}
-		answer=new int[day.size()];
-		for(int i=0;i<day.size();i++) {
-			answer[i]=map.get(day.get(i));
+		answer=new int[arr.size()];
+		
+		for(int i=0;i<arr.size();i++) {
+			answer[i]=hash.get(arr.get(i));
 		}
 		return answer;
 	}

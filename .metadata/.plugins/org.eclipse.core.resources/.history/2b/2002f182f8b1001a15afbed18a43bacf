@@ -1,0 +1,17 @@
+package programmers_lev02;
+
+public class Compression {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static int[] solution(String msg) {
+        int[] answer = {};
+        
+        
+        return answer;
+    }
+
+}
