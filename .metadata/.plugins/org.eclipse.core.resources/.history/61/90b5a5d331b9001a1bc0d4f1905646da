@@ -1,0 +1,28 @@
+package programmers_lev02;
+
+import java.util.HashMap;
+
+// https://programmers.co.kr/learn/courses/30/lessons/17684
+// 프로그래머스 17684 [3차]압축
+public class Compression {
+
+	public static void main(String[] args) {
+		String msg="KAKAO";
+		
+		solution(msg);
+	}
+	
+	public static int[] solution(String msg) {
+        int[] answer = {};
+        char a='A';
+        HashMap<String, Integer> map=new HashMap<>();
+        for(int i=0;i<26;i++) {
+        	map.put(a+i+"", i+1);
+        }
+        
+        System.out.println(map.get("A"));
+        
+        return answer;
+    }
+
+}
