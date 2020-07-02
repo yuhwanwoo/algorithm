@@ -30,6 +30,7 @@ public class Compression {
             int print=0;
             while(map.containsKey(temp)) {
             	print=map.get(temp);
+            	arr.add(print)
             }
         }
         

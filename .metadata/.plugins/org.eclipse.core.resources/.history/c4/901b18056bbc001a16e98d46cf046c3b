@@ -27,9 +27,8 @@ public class Compression {
         String[] msgspl=msg.split("");
         for(int i=0;i<msgspl.length;i++) {
             String temp=msgspl[i];
-            int print=0;
             while(map.containsKey(temp)) {
-            	print=map.get(temp);
+            	
             }
         }
         
