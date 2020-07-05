@@ -1,0 +1,47 @@
+package booCam;
+
+import java.util.ArrayList;
+
+public class Exam02 {
+
+	public static void main(String[] args) {
+		int[] arrayA= {1,2,3,2};
+		int[] arrayB= {1,3};
+		
+		solution(arrayA, arrayB);
+	}
+	
+	public static int[] solution(int[] arrayA,int[] arrayB) {
+		int[] answer= {};
+		ArrayList<Integer> arrA=new ArrayList<>();
+		ArrayList<Integer> arrB=new ArrayList<>();
+		ArrayList<Integer> arrS=new ArrayList<>();
+		ArrayList<Integer> arrC=new ArrayList<>();
+		ArrayList<Integer> arrI=new ArrayList<>();
+		for(int data:arrayA) {
+			if(!arrA.contains(data)) {
+				arrA.add(data);
+			}
+		}
+		
+		for(int data:arrayB) {
+			if(!arrB.contains(data)) {
+				arrB.add(data);
+			}
+		}
+		
+		// Â÷ÁýÇÕ
+		for(int data2:arrA) {
+			if(arrB.contains(data2)) {
+				arrI.add(data2);
+			}
+		}
+		
+		for(int i=0;i<arrB.size();i++) {
+			System.out.println(arrB.get(i));
+		}
+		
+		return answer;
+	}
+
+}

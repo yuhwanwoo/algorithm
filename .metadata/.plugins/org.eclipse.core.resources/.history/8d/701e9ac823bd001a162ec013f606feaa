@@ -1,0 +1,18 @@
+package programmers_lev02;
+
+public class SortString {
+
+	public static void main(String[] args) {
+		String[] files= {"img12.png", "img10.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"};
+		
+		
+	}
+	
+	public static String[] solution(String[] files) {
+        String[] answer = {};
+        for(int i=0)
+        
+        return answer;
+    }
+
+}

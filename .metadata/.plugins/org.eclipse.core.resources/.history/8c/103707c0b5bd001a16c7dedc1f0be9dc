@@ -1,0 +1,16 @@
+package booCam;
+
+public class Exam01 {
+
+	public static void main(String[] args) {
+		String[] name_list= {"가을","우주","너굴"};
+
+		solution(name_list);
+	}
+	
+	public static boolean solution(String[] name_list) {
+		
+		return true;
+	}
+
+}

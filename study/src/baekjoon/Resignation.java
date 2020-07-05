@@ -16,29 +16,13 @@ public class Resignation {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		yn = Integer.parseInt(st.nextToken());
-		arr = new int[yn][2];
-		for (int i = 0; i < yn; i++) {
-			st = new StringTokenizer(br.readLine());
-			for (int j = 0; j < 2; j++) {
-				arr[i][j] = Integer.parseInt(st.nextToken());
-			}
-		}
-		int answer = 0;
-
-		answer = solution(arr, 0, 0);
-		System.out.println(answer);
-
-	}
-
-	public static int solution(int[][] arr, int today, int sum) {
-		int res1;
-		int res2;
-		if (arr.length < today) {
-			return sum;
-		} else {
-			
-		}
+		int[] dp=new int[yn];
 		
-		return 0;
+		for (int i = 0; i < yn; i++) {
+			int T=Integer.parseInt(st.nextToken());
+			int P=Integer.parseInt(st.nextToken());
+			
+			dp[i+T]=dp[i];
+		}
 	}
 }
