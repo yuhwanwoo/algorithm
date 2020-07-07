@@ -29,7 +29,6 @@ public class lab {
 	
 	public static int virus(int[][] arr) {
 		
-		
 		return 0;
 	}
 

@@ -24,13 +24,6 @@ public class lab {
 			}
 		}
 		
-		virus(arr);
-	}
-	
-	public static int virus(int[][] arr) {
-		
-		
-		return 0;
 	}
 
 }
