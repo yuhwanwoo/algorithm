@@ -24,13 +24,12 @@ public class lab {
 			}
 		}
 		
-		int min=N*M;
-		
-		virus(arr,min);
+		virus(arr);
 	}
 	
-	public static int virus(int[][] arr,int min) {
-
+	public static int virus(int[][] arr) {
+		
+		
 		return 0;
 	}
 
