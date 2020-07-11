@@ -24,24 +24,14 @@ public class lab {
 			}
 		}
 		
-		// 벽을 먼저 세워보자
-		for(int i=0;i<N*M;i++) {
-			int row=i/M;
-			int col=i%M;
-			
-			if(arr[row][col]==0) {
-				
-			}
-		}
+		int min=N*M;
+		
+		virus(arr,min);
 	}
 	
 	public static int virus(int[][] arr,int min) {
 
 		return 0;
-	}
-	
-	public static int[][] walladd(int[][] arr){
-		return null;
 	}
 
 }
