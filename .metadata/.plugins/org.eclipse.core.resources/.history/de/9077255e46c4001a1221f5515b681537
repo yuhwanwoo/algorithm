@@ -40,9 +40,7 @@ public class lab {
 			int col=i%M;
 			
 			if(arr[row][col]==0) {
-				arr[row][col]=1;
 				walladd(arr,i,1);
-				arr=clone;
 			}
 		}
 	}
@@ -52,21 +50,13 @@ public class lab {
 		
 		if(count==3) {
 			//바이러스 퍼뜨리자
-			count=1;
 			System.out.println(1);
-			for(int j=0;j<N;j++) {
-				for(int k=0;k<M;k++) {
-					System.out.print(arr[j][k]+" ");
-				}
-				System.out.println();
-				System.out.println("==========");
-			}
 		}else {
+			arr[num/M][num%M]=1;
 			for(i=num+1;i<N*M;i++){
 				int row=i/M;
 				int col=i%M;
 				if(arr[row][col]==0) {
-					arr[row][col]=1;
 					count++;
 					walladd(arr,i,count);
 				}

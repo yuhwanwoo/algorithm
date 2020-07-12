@@ -12,7 +12,6 @@ public class lab {
 
 	static int N;
 	static int M;
-	static int[][] clone;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -27,12 +26,6 @@ public class lab {
 				arr[i][j]=Integer.parseInt(st.nextToken());
 			}
 		}
-		clone=new int[N][M];
-		for(int i=0;i<N;i++) {
-			for(int j=0;j<M;j++) {
-				clone[i][j]=arr[i][j];
-			}
-		}
 		
 		// 벽을 먼저 세워보자
 		for(int i=0;i<N*M;i++) {
@@ -40,38 +33,20 @@ public class lab {
 			int col=i%M;
 			
 			if(arr[row][col]==0) {
-				arr[row][col]=1;
-				walladd(arr,i,1);
-				arr=clone;
+				walladd(i,1);
 			}
 		}
 	}
 	
-	public static int[][] walladd(int[][] arr,int num,int count){
-		int i=0;
-		
+	public static int[][] walladd(int num,int count){
 		if(count==3) {
 			//바이러스 퍼뜨리자
-			count=1;
-			System.out.println(1);
-			for(int j=0;j<N;j++) {
-				for(int k=0;k<M;k++) {
-					System.out.print(arr[j][k]+" ");
-				}
-				System.out.println();
-				System.out.println("==========");
-			}
 		}else {
-			for(i=num+1;i<N*M;i++){
-				int row=i/M;
-				int col=i%M;
-				if(arr[row][col]==0) {
-					arr[row][col]=1;
-					count++;
-					walladd(arr,i,count);
-				}
+			for(int i=num+1;i<N*M;i++) {
+				System.out.println(N);
 			}
-			
+			count++;
+			walladd(num,count);
 		}
 		return null;
 	}

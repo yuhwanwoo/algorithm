@@ -59,14 +59,12 @@ public class lab {
 					System.out.print(arr[j][k]+" ");
 				}
 				System.out.println();
-				System.out.println("==========");
 			}
 		}else {
 			for(i=num+1;i<N*M;i++){
 				int row=i/M;
 				int col=i%M;
 				if(arr[row][col]==0) {
-					arr[row][col]=1;
 					count++;
 					walladd(arr,i,count);
 				}

@@ -66,7 +66,6 @@ public class lab {
 				int row=i/M;
 				int col=i%M;
 				if(arr[row][col]==0) {
-					arr[row][col]=1;
 					count++;
 					walladd(arr,i,count);
 				}

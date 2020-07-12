@@ -69,6 +69,7 @@ public class lab {
 					arr[row][col]=1;
 					count++;
 					walladd(arr,i,count);
+					arr[row][col]=0;
 				}
 			}
 			

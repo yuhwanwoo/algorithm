@@ -61,6 +61,7 @@ public class lab {
 				System.out.println();
 				System.out.println("==========");
 			}
+			arr=clone;
 		}else {
 			for(i=num+1;i<N*M;i++){
 				int row=i/M;
