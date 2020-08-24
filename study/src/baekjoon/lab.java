@@ -3,6 +3,8 @@ package baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -13,7 +15,9 @@ public class lab {
 
 	static int N;
 	static int M;
-	static int[][] clone;
+	static int vir;
+	static int MAX;
+	static Queue<Integer> que=new LinkedList<Integer>();
 	
 	
 	public static void main(String[] args) throws IOException {
@@ -29,65 +33,61 @@ public class lab {
 				arr[i][j]=Integer.parseInt(st.nextToken());
 			}
 		}
-		clone=new int[N][M];
+		/*clone=new int[N][M];
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				clone[i][j]=arr[i][j];
 			}
-		}
-		
-		// 벽을 먼저 세워보자
-		/*for(int i=0;i<N*M;i++) {
-			int row=i/M;
-			int col=i%M;
-			
-			if(arr[row][col]==0) {
-				arr[row][col]=1;
-				
-				walladd(arr,i,1);
-				arr=clone;
-			}
 		}*/
+		
+		
 		for(int i=0;i<N*M;i++) {
-			int row=i/M;
-			int col=i%M;
-			if(arr[row][col]==0) {
+			if(arr[i/M][i%M]==2) {
+				que.add(i);
+			}
+			if(arr[i/M][i%M]==0) {
+				arr[i/M][i%M]=1;
 				for(int j=i+1;j<N*M;j++) {
 					if(arr[j/M][j%M]==0) {
-						
+						arr[j/M][j%M]=1;
+						for(int k=j+1;k<N*M;k++) {
+							if(arr[k/M][k%M]==0) {
+								//바이러스 퍼뜨리고
+								arr[k/M][k%M]=1;
+								virus(arr);
+								arr[k/M][k%M]=0;
+							}
+						}
+						arr[j/M][j%M]=0;
 					}
 				}
+				arr[i/M][i%M]=0;
 			}
 		}
-	}
-	
-	public static int[][] walladd(int[][] arr,int num,int count){
-		int i=0;
 		
-		if(count==3) {
-			//바이러스 퍼뜨리자
-			
-		}else {
-			for(i=num+1;i<N*M;i++){
-				int row=i/M;
-				int col=i%M;
-				if(arr[row][col]==0) {
-					
-					arr[row][col]=1;
-					count++;
-					walladd(arr,i,count);
-				}
-			}
+	}
+	
+	
+	public static void virus(int[][] arr) {
+
+		
+		
+		
+		while(!que.isEmpty()) {	
+			int i=que.poll();
+			SPR spr = new SPR(i/M,i%M);
+
 			
 		}
-		return null;
 	}
 	
-	public static int virus(int[][] arr,int min) {
-
-		return 0;
+	static class SPR{
+		int x;
+		int y;
+		SPR(int x,int y){
+			this.x=x;
+			this.y=y;
+		}
 	}
-	
-	
 
 }
