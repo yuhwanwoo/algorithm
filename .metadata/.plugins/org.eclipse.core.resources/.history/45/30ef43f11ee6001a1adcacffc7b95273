@@ -23,6 +23,7 @@ public class CountryOf124 {
 			
 			answer=number[index]+answer;
 		}
+		System.out.println(answer);
 		return answer;
 	}
 }
