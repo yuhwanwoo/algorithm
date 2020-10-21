@@ -1,0 +1,24 @@
+package programmers_lev02;
+
+public class String_Compession {
+
+	public static void main(String[] args) {
+		String s="aabbaccc";
+		
+		System.out.println(s);
+	}
+	
+	public static int solution(String s) {
+		int answer=0;
+		
+		return answer;
+	}
+	
+	public static int sol(int size,String stri) {
+		int cnt=1;
+		stri.substring(0, size):
+		
+		return 0;
+	}
+
+}
