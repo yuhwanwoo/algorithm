@@ -1,0 +1,33 @@
+package programmers_lev03;
+
+public class LockAndKey {
+
+	public static void main(String[] args) {
+		
+		int[][] key= {{0, 0, 0}, {1, 0, 0}, {0, 1, 1}};
+		int[][] lock= {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
+		
+		solution(key,lock);
+	}
+	
+	public static boolean solution(int[][] key,int[][] lock) {
+		boolean answer=false;
+		int n=key.length;
+		int m=lock.length;
+		int[][] extention_map=new int[m*3][m*3];
+		
+		for(int i=0;i<m;i++) {
+			for(int j=0;j<m;j++) {
+				extention_map[m+i][m+j]=lock[i][j];
+			}
+		}
+		for(int i=0;i<m;i++) {
+			for(int j=0;j<m;j++) {
+				System.out.println(extention_map[i][j]);
+			}
+		}
+		return answer;
+	}
+	
+	
+}
