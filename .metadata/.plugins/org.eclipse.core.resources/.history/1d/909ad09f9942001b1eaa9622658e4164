@@ -1,0 +1,18 @@
+package study;
+
+public class eximb_exam03 {
+
+	public static void main(String[] args) {
+		n=15;
+		
+		solution(n);
+
+	}
+	
+	public static int solution(int n) {
+        int answer = 0;
+
+        return answer;
+    }
+
+}
