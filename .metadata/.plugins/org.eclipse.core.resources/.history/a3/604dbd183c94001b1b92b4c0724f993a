@@ -1,0 +1,64 @@
+package study;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+
+public class commerce02 {
+	
+	ArrayList<Integer[]> n=new ArrayList<>();
+	public static void main(String[] args) {
+		int[][] needs = { { 1, 0, 0 }, { 1, 1, 0 }, { 1, 1, 0 }, { 1, 0, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
+		int r = 2;
+
+		solution(needs, r);
+	}
+
+	public static int solution(int[][] needs, int r) {
+		int answer = 0;
+
+		HashMap<Integer, ArrayList<Integer>> hash = new HashMap<>();
+
+		for (int i = 0; i < needs.length; i++) {
+			ArrayList<Integer> temp = new ArrayList<>();
+			for (int j = 0; j < needs[i].length; j++) {
+				if (needs[i][j] == 1) {
+					temp.add(j);
+					hash.put(i, temp);
+				}
+
+			}
+		}
+
+		// 조합
+		LinkedList<Integer> list = new LinkedList<>();
+		System.out.println("****조  합****");
+		combination(list, 4, 3, 0);
+		list.clear();
+
+		System.out.println(hash.get(3));
+
+		return answer;
+	}
+
+	// 조합
+	private static void combination(LinkedList<Integer> list, int n, int r, int index) {
+		if (r == 0) {// r이 0이면 다 뽑았다는 뜻
+			ArrayList<Integer> temp=new ArrayList<>();
+			for (int i : list) {
+				System.out.print(i + " ");
+				temp.add(i);
+			}
+			System.out.println();
+			return;
+		}
+		if (index == n)
+			return; // 다 탐색했으면 종료..
+
+		list.add(index);
+		combination(list, n, r - 1, index + 1);// 뽑았으니 ,r-1
+		list.removeLast();
+		combination(list, n, r, index + 1);// 안뽑았으니, r
+	}
+
+}

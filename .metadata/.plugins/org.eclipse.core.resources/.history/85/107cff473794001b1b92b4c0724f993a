@@ -1,0 +1,17 @@
+package study;
+
+public class commerce02 {
+
+	public static void main(String[] args) {
+		int[][] needs= {{1,0,0},{1,1,0},{1,1,0},{1,0,1},{1,1,0},{0,1,1}};
+
+	}
+	
+	public static int solution() {
+		int answer=0;
+		
+		
+		return answer;
+	}
+
+}

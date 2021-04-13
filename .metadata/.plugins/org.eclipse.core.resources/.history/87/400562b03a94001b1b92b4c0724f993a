@@ -1,0 +1,48 @@
+package study;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class commerce02 {
+
+	public static void main(String[] args) {
+		int[][] needs= {{1,0,0},{1,1,0},{1,1,0},{1,0,1},{1,1,0},{0,1,1}};
+		int r=2;
+		
+		solution(needs,r);
+	}
+	
+	public static int solution(int[][] needs, int r) {
+		int answer=0;
+		
+		HashMap<Integer, ArrayList<Integer>> hash=new HashMap<>();
+		
+		for (int i = 0; i < needs.length; i++) {
+			ArrayList<Integer> temp=new ArrayList<>();
+			for (int j = 0; j < needs[i].length; j++) {
+				if(needs[i][j]==1) {
+					temp.add(j);
+					hash.put(i, temp);
+				}
+				
+			}
+		}
+		System.out.println(hash.get(3));
+		
+		return answer;
+	}
+	
+	static void comb1(int[] arr, boolean[] visited, int start, int n, int r) {
+		if(r == 0) {
+			System.out.println(arr+" "+visited+" "+ n);
+			return;
+		} else {
+			for(int i = start; i < n; i++) {
+				visited[i] = true;
+				comb1(arr, visited, i + 1, n, r - 1);
+				visited[i] = false;
+			}
+		}
+	}
+
+}

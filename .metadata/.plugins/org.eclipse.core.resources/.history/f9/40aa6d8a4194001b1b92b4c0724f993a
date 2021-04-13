@@ -1,0 +1,110 @@
+package study;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map.Entry;
+
+public class commerce02 {
+	
+	static ArrayList<ArrayList<Integer>> comb=new ArrayList<>();
+	
+	public static void main(String[] args) {
+		int[][] needs = { { 1, 0, 0 }, { 1, 1, 0 }, { 1, 1, 0 }, { 1, 0, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
+		int r = 2;
+
+		solution(needs, r);
+	}
+
+	public static int solution(int[][] needs, int r) {
+		int answer = 0;
+
+		HashMap<Integer, ArrayList<Integer>> hash = new HashMap<>();
+		
+		// 0 번은 [0]. 1번은 [0,1]
+		for (int i = 0; i < needs.length; i++) {
+			ArrayList<Integer> temp = new ArrayList<>();
+			for (int j = 0; j < needs[i].length; j++) {
+				if (needs[i][j] == 1) {
+					temp.add(j);
+					hash.put(i, temp);
+				}
+
+			}
+		}
+
+		// 조합
+		LinkedList<Integer> list = new LinkedList<>();
+		System.out.println("****조  합****");
+		combination(list, needs[0].length, r, 0);
+		list.clear();
+
+		System.out.println(hash.get(3));
+		System.out.println(comb);
+		
+		System.out.println("==================");
+		
+		for(Entry<Integer, ArrayList<Integer>> ele : hash.entrySet()) {
+			for (int i = 0; i < ele.getValue().size(); i++) {
+				for (int k = 0; k < comb.size(); k++) {
+					for (int j = 0; j < comb.get(i).size(); j++) {
+						
+					}
+				}
+			}
+		}
+		
+		for (int i = 0; i < comb.size(); i++) {
+			for (int j = 0; j < comb.get(i).size(); j++) {
+				// hash 안에 확인
+				for(Entry<Integer, ArrayList<Integer>> ele : hash.entrySet()) {
+					int judge=0;
+					for (int k = 0; k < ele.getValue().size(); k++) {
+						System.out.println(comb.get(i).get(j));
+						System.out.println("키값::"+ele.getKey());
+						System.out.println(ele.getValue().get(k));
+						if(comb.get(i).get(j)==ele.getValue().get(k)) {
+							judge+=1;
+						}
+						System.out.println("-----------------------------");	
+					}
+					System.out.println("judge"+judge);
+					System.out.println("밸류 사이즈 즉 arrayList::::"+ele.getValue().size());
+					if(judge==ele.getValue().size()) {
+						System.out.println("정답시작");
+						System.out.println(ele.getValue());
+						answer+=1;
+						System.out.println("정답끝");
+					}
+					System.out.println();
+					
+				}
+			}
+		}
+		
+		System.out.println(answer);
+		return answer;
+	}
+
+	// 조합
+	private static void combination(LinkedList<Integer> list, int n, int r, int index) {
+		if (r == 0) {// r이 0이면 다 뽑았다는 뜻
+			ArrayList<Integer> temp=new ArrayList<>();
+			for (int i : list) {
+				System.out.print(i + " ");
+				temp.add(i);
+			}
+			comb.add(temp);
+			System.out.println();
+			return;
+		}
+		if (index == n)
+			return; // 다 탐색했으면 종료..
+
+		list.add(index);
+		combination(list, n, r - 1, index + 1);// 뽑았으니 ,r-1
+		list.removeLast();
+		combination(list, n, r, index + 1);// 안뽑았으니, r
+	}
+
+}

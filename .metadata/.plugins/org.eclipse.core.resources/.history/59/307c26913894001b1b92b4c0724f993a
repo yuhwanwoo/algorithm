@@ -1,0 +1,32 @@
+package study;
+
+public class commerce02 {
+
+	public static void main(String[] args) {
+		int[][] needs= {{1,0,0},{1,1,0},{1,1,0},{1,0,1},{1,1,0},{0,1,1}};
+		int r=2;
+		
+		solution(needs,r);
+	}
+	
+	public static int solution(int[][] needs, int r) {
+		int answer=0;
+		
+		
+		return answer;
+	}
+	
+	static void comb1(int[] arr, boolean[] visited, int start, int n, int r) {
+		if(r == 0) {
+			System.out.println(arr+" "+visited+" "+ n);
+			return;
+		} else {
+			for(int i = start; i < n; i++) {
+				visited[i] = true;
+				comb1(arr, visited, i + 1, n, r - 1);
+				visited[i] = false;
+			}
+		}
+	}
+
+}

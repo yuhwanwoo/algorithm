@@ -1,0 +1,18 @@
+package study;
+
+public class commerce01 {
+
+	public static void main(String[] args) {
+		int[] gift_cards= {4,5,3,2,1};
+		int[] wants= {2,4,4,5,1};
+		
+		solution(gift_cards,wants);
+		
+	}
+	public static int solution(int[] gift_cards, int[] wants) {
+		
+		
+		return 0;
+	}
+
+}
